@@ -5,14 +5,14 @@
     android:title="" />
     <item
     android:icon="@drawable/ic_search"
-    android:title="search" />
+    android:title="" />
     <item
     android:icon="@drawable/ic_share"
-    android:title="share people" />
+    android:title="" />
     <item
     android:icon="@drawable/ic_likes"
-    android:title="views likes" />
+    android:title="" />
     <item
     android:icon="@drawable/ic_profile"
-    android:title="profile" />
+    android:title="" />
 </menu>
