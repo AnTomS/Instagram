@@ -1,30 +1,59 @@
 package com.example.instagram
 
+import android.R
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import androidx.annotation.NonNull
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.ui.AppBarConfiguration
 import com.example.instagram.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
+
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
+//    private val mOnNavigationItemSelectedListener =
+//        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+//            when (item.) {
+//                R.id.home -> {
+//                    loadFragment(HomeFragment.newInstance())
+//                    return@OnNavigationItemSelectedListener true
+//                }
+//                R.id.search -> {
+//                    loadFragment(DashboardFragment.newInstance())
+//                    return@OnNavigationItemSelectedListener true
+//                }
+//                R.id.navigation_notifications -> {
+//                    loadFragment(NotificationsFragment.newInstance())
+//                    return@OnNavigationItemSelectedListener true
+//                }
+//            }
+//            false
+//        }
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
-       super.onCreate(savedInstanceState)
+        super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setSupportActionBar(binding.topToolbar)
+
     }
+//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        menuInflater.inflate(R.menu.menu_main, menu)
+//        return true
+//    }
 }
 
-//        setSupportActionBar(binding.toolbar)
+//
 //
 //        val navController = findNavController(R.id.nav_host_fragment_content_main)
 //        appBarConfiguration = AppBarConfiguration(navController.graph)
@@ -37,11 +66,7 @@ class MainActivity : AppCompatActivity() {
 //        }
 //    }
 
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        menuInflater.inflate(R.menu.menu_main, menu)
-//        return true
-//    }
+//
 
 //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 //        // Handle action bar item clicks here. The action bar will
