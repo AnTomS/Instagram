@@ -24,22 +24,24 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.ic_home -> {
                     loadFragment(HomeFragment())
-
+                    true
                 }
                 R.id.ic_search -> {
                     loadFragment(SearchFragment())
-
+                    true
                 }
                 R.id.ic_share -> {
                     loadFragment(ShareFragment())
-
+                    true
                 }
                 R.id.ic_likes -> {
                     loadFragment(LikedFragment())
+                    true
 
                 }
                 R.id.ic_profile -> {
                     loadFragment(ProfileFragment())
+                    true
 
                 }
 
