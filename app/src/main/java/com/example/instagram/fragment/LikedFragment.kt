@@ -14,5 +14,8 @@ class LikedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? =
         inflater.inflate(R.layout.fragment_liked, container, false)
-
+    companion object {
+        fun newInstance() = LikedFragment()
+    }
 }
+

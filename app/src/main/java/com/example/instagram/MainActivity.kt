@@ -1,15 +1,12 @@
 package com.example.instagram
 
 import android.os.Bundle
-import android.widget.Toast
 
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.instagram.databinding.ActivityMainBinding
 import com.example.instagram.fragment.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -23,29 +20,112 @@ class MainActivity : AppCompatActivity() {
     private val host by lazy { NavHostFragment.create(R.navigation.nav_graph) }
 
 
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//
+//        binding = ActivityMainBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
+//        binding.bottomNav.setOnItemSelectedListener {
+//            when (it.itemId) {
+//                R.id.ic_home ->
+//                    Toast.makeText(this, "home", Toast.LENGTH_SHORT).show()
+//                R.id.ic_likes
+//                -> Toast.makeText(this, "likes", Toast.LENGTH_SHORT).show()
+//                R.id.ic_search
+//                -> Toast.makeText(this, "search", Toast.LENGTH_SHORT).show()
+//                R.id.ic_share
+//                -> Toast.makeText(this, "shares", Toast.LENGTH_SHORT).show()
+//                R.id.ic_profile
+//                -> Toast.makeText(this, "profile", Toast.LENGTH_SHORT).show()
+//
+//            }
+//            true
+//        }
+//
+//    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+        //setContentView(R.layout.activity_main)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.bottomNav.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.ic_home ->
-                    Toast.makeText(this, "home", Toast.LENGTH_SHORT).show()
-                R.id.ic_likes
-                -> Toast.makeText(this, "likes", Toast.LENGTH_SHORT).show()
-                R.id.ic_search
-                -> Toast.makeText(this, "search", Toast.LENGTH_SHORT).show()
-                R.id.ic_share
-                -> Toast.makeText(this, "shares", Toast.LENGTH_SHORT).show()
-                R.id.ic_profile
-                -> Toast.makeText(this, "profile", Toast.LENGTH_SHORT).show()
 
+
+        val toolbar = supportActionBar;
+
+        loadFragment(HomeFragment.newInstance())
+
+        binding.bottomNav.setOnItemSelectedListener { item ->
+            var fragment: Fragment
+            when (item.itemId) {
+                R.id.ic_home -> {
+                    toolbar?.setTitle("Home")
+                    fragment = HomeFragment()
+                    loadFragment(fragment)
+                    true
+                }
+                R.id.ic_search -> {
+                    toolbar?.setTitle("Search")
+                    fragment = SearchFragment()
+                    loadFragment(fragment)
+                    true
+
+                }
+                R.id.ic_share -> {
+                    toolbar?.setTitle("Share")
+                    fragment = ShareFragment()
+                    loadFragment(fragment)
+                    true
+
+                }
+                R.id.ic_likes -> {
+                    toolbar?.setTitle("My Liked")
+                    fragment = LikedFragment()
+                    loadFragment(fragment)
+                    true
+
+                }
+                R.id.ic_profile -> {
+                    toolbar?.setTitle("Library")
+                    fragment = ProfileFragment()
+                    loadFragment(fragment)
+                    true
+
+                }
+                else -> false
             }
-            true
+
         }
 
+        binding.bottomNav.setOnItemReselectedListener { item ->
+            when (item.itemId) {
+                R.id.ic_home -> {
+                    Toast.makeText(this, "Home Item reselected", Toast.LENGTH_SHORT).show()
+                }
+                R.id.ic_search -> {
+                    Toast.makeText(this, "Search Item reselected", Toast.LENGTH_SHORT).show()
+                }
+                R.id.ic_share -> {
+                    Toast.makeText(this, "Share Item reselected", Toast.LENGTH_SHORT).show()
+                }
+                R.id.ic_likes -> {
+                    Toast.makeText(this, "My liked Item reselected", Toast.LENGTH_SHORT).show()
+                }
+                R.id.ic_profile -> {
+                    Toast.makeText(this, "My profile Item reselected", Toast.LENGTH_SHORT).show()
 
+                }
+            }
+        }
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        // load fragment
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, fragment)
+            .commit()
     }
 }
 

@@ -15,4 +15,9 @@ class SearchFragment : Fragment() {
     ): View? =
         inflater.inflate(R.layout.fragment_search, container, false)
 
+    companion object {
+
+        fun newInstance() = SearchFragment()
+    }
 }
+
