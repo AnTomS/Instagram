@@ -3,26 +3,63 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/mainActivity">
 
-    <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.instagram.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_home">
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.instagram.MainActivity"
+        android:label="activity_main"
+        app:destination="@+id/homeFragment"
+        tools:layout="@layout/activity_main">
 
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.instagram.SearchFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_search">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
+            android:id="@+id/activity_main_to_home_fragment"
+            app:destination="@id/homeFragment"
+             />
+
+        <action
+            android:id="@+id/activity_main_to_search_fragment"
+            app:destination="@id/searchFragment"
+             />
+
+        <action
+            android:id="@+id/activity_main_to_share_fragment"
+            app:destination="@id/shareFragment"
+             />
+        <action
+            android:id="@+id/activity_main_to_liked_fragment"
+            app:destination="@id/likedFragment"
+             />
+        <action
+            android:id="@+id/activity_main_to_profile_fragment"
+            />
+
+
+    </activity>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.instagram.fragment.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.instagram.fragment.SearchFragment"
+        android:label="search_fragment"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/shareFragment"
+        android:name="com.example.instagram.fragment.ShareFragment"
+        android:label="share_fragment"
+        tools:layout="@layout/fragment_share" />
+    <fragment
+        android:id="@+id/likedFragment"
+        android:name="com.example.instagram.fragment.LikedFragment"
+        android:label="liked_fragment"
+        tools:layout="@layout/fragment_liked" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.instagram.fragment.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
