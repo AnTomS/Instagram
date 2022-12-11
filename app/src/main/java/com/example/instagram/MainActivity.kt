@@ -29,10 +29,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
         loadFragment(HomeFragment.newInstance())
-
 
         binding.bottomNav.setOnItemSelectedListener { item ->
             val fragment: Fragment

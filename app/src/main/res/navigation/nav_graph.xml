@@ -5,44 +5,24 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.instagram.MainActivity"
-        android:label="activity_main"
-        app:destination="@+id/MainActivity"
-        tools:layout="@layout/activity_main">
-
-
-        <action
-            android:id="@+id/activity_main_to_home_fragment"
-            app:destination="@id/homeFragment"
-             />
-
-        <action
-            android:id="@+id/activity_main_to_search_fragment"
-            app:destination="@id/searchFragment"
-             />
-
-        <action
-            android:id="@+id/activity_main_to_share_fragment"
-            app:destination="@id/shareFragment"
-             />
-        <action
-            android:id="@+id/activity_main_to_liked_fragment"
-            app:destination="@id/likedFragment"
-             />
-        <action
-            android:id="@+id/activity_main_to_profile_fragment"
-            app:destination="@id/profileFragment"
-            />
-
-
-    </activity>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.instagram.fragment.HomeFragment"
         android:label="home_fragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_shareFragment"
+            app:destination="@id/shareFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_likedFragment"
+            app:destination="@id/likedFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.instagram.fragment.SearchFragment"
