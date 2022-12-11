@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.instagram.R
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : Fragment(R.layout.fragment_profile) {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
