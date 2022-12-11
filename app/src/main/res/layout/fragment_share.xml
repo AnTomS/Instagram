@@ -9,6 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Share foto for You Friends" />
+        android:gravity="center"
+        android:text="Здесь будет экран поделиться фотографией или ссылкой на пользователя с друзьями" />
 
 </FrameLayout>

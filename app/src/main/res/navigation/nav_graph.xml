@@ -33,6 +33,7 @@
              />
         <action
             android:id="@+id/activity_main_to_profile_fragment"
+            app:destination="@id/profileFragment"
             />
 
 
