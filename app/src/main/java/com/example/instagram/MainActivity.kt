@@ -39,53 +39,5 @@ class MainActivity : AppCompatActivity() {
 }
 
 
-//        loadFragment(HomeFragment.newInstance())
-//
-//        binding.bottomNav.setOnItemSelectedListener { item ->
-//            val fragment: Fragment
-//            when (item.itemId) {
-//                R.id.homeFragment -> {
-//                    fragment = HomeFragment()
-//                    loadFragment(fragment)
-//                    true
-//                }
-//                R.id.searchFragment -> {
-//                    fragment = SearchFragment()
-//                    loadFragment(fragment)
-//                    true
-//
-//                }
-//                R.id.shareFragment -> {
-//                    fragment = ShareFragment()
-//                    loadFragment(fragment)
-//                    true
-//
-//                }
-//                R.id.likedFragment -> {
-//                    fragment = LikedFragment()
-//                    loadFragment(fragment)
-//                    true
-//
-//                }
-//                R.id.profileFragment -> {
-//                    fragment = ProfileFragment()
-//                    loadFragment(fragment)
-//                    true
-//
-//                }
-//                else -> false
-//            }
-//
-//        }
-//
-//
-//    }
-//
-//    private fun loadFragment(fragment: Fragment) {
-//        // load fragment
-//        supportFragmentManager.beginTransaction()
-//            .replace(R.id.nav_host_fragment, fragment)
-//            .commit()
-//    }
 
 
