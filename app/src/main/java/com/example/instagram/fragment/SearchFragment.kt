@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.instagram.R
+import kotlinx.coroutines.delay
 
 class SearchFragment : Fragment() {
     override fun onCreateView(
@@ -19,5 +21,10 @@ class SearchFragment : Fragment() {
 
         fun newInstance() = SearchFragment()
     }
-}
 
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
+}

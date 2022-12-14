@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.instagram.R
 
-class ProfileFragment : Fragment(R.layout.fragment_profile) {
+class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -19,4 +19,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         fun newInstance() = ProfileFragment()
     }
+
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+}
 }

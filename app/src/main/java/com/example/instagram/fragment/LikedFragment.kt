@@ -17,5 +17,8 @@ class LikedFragment : Fragment() {
     companion object {
         fun newInstance() = LikedFragment()
     }
-}
 
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+}
+}

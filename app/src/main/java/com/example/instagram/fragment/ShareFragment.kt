@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.instagram.R
 
 class ShareFragment : Fragment() {
-    override fun onCreateView(
+        override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -18,5 +18,9 @@ class ShareFragment : Fragment() {
     companion object {
 
         fun newInstance() = ShareFragment()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 }
