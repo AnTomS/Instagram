@@ -19,9 +19,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var navController: NavController
     lateinit var binding: ActivityMainBinding
-    private lateinit var bottomNav: BottomNavigationView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -29,9 +28,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+            //получаем доступ к BottomNavigationView
         val navView: BottomNavigationView = findViewById(R.id.bottomNav)
+
+        //получаем доступ к фрагменту, в который будем вставлять другие фрагменты, через supportFragmentManager
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+
+        //получаем доступ к Навконтроллеру. Навконтроллер, в свою очередь, связан с Навигацией
         val navController: NavController = navHostFragment.navController
 
         navView.setupWithNavController(navController)
