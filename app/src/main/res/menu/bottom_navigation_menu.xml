@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_home_selector"
         android:title="" />
     <item
         android:id="@+id/searchFragment"
-        android:icon="@drawable/ic_search"
+        android:icon="@drawable/ic_search_selector"
         android:title="" />
     <item
         android:id="@+id/shareFragment"
-        android:icon="@drawable/ic_share"
+        android:icon="@drawable/ic_shared_selector"
         android:title="" />
     <item
         android:id="@+id/likedFragment"
-        android:icon="@drawable/ic_likes"
+        android:icon="@drawable/ic_liked_selector"
         android:title="" />
     <item
         android:id="@+id/profileFragment"
-        android:icon="@drawable/ic_profile"
+        android:icon="@drawable/ic_person_selector"
         android:title="" />
 </menu>
