@@ -7,30 +7,33 @@
     android:orientation="vertical"
     tools:context=".fragment.ProfileFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/container_profile_top"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile_container"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:gravity="top"
-        android:orientation="horizontal"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+        android:layout_height="243dp"
+        android:padding="@dimen/common_spacing">
 
         <ImageView
-            android:id="@+id/profile_avatar"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:contentDescription="@string/users_avatar"
-            android:scaleType="centerCrop"
-            android:src="@drawable/default_avatar"
-            app:layout_anchorGravity="center" />
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/avatar_big_size"
+            android:layout_height="@dimen/avatar_big_size"
+            android:layout_marginBottom="@dimen/common_spacing"
+            android:contentDescription="@string/author_avatar_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/no_avatar_pic" />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/edit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/profile_container"
+        app:layout_anchorGravity="center"
+        app:layout_constraintStart_toEndtOf="@+id/avatar"
+        android:text="@string/edit_profile"
+        />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
