@@ -10,30 +10,29 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/profile_container"
         android:layout_width="match_parent"
-        android:layout_height="243dp"
+        android:layout_height="wrap_content"
         android:padding="@dimen/common_spacing">
 
         <ImageView
             android:id="@+id/avatar"
             android:layout_width="@dimen/avatar_big_size"
             android:layout_height="@dimen/avatar_big_size"
-            android:layout_marginBottom="@dimen/common_spacing"
             android:contentDescription="@string/author_avatar_description"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/no_avatar_pic" />
 
+        <Button
+            android:id="@+id/edit_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_profile"
+            app:layout_anchorGravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/avatar"
+            app:layout_constraintTop_toBottomOf="@+id/avatar" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <Button
-        android:id="@+id/edit_profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_anchor="@+id/profile_container"
-        app:layout_anchorGravity="center"
-        app:layout_constraintStart_toEndtOf="@+id/avatar"
-        android:text="@string/edit_profile"
-        />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
