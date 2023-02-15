@@ -19,9 +19,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var navController: NavController
     lateinit var binding: ActivityMainBinding
-    private lateinit var bottomNav: BottomNavigationView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -29,9 +28,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+            //получаем доступ к BottomNavigationView
         val navView: BottomNavigationView = findViewById(R.id.bottomNav)
+
+        //получаем доступ к фрагменту, в который будем вставлять другие фрагменты, через supportFragmentManager
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+
+        //получаем доступ к Навконтроллеру. Навконтроллер, в свою очередь, связан с Навигацией
         val navController: NavController = navHostFragment.navController
 
         navView.setupWithNavController(navController)
@@ -39,53 +43,5 @@ class MainActivity : AppCompatActivity() {
 }
 
 
-//        loadFragment(HomeFragment.newInstance())
-//
-//        binding.bottomNav.setOnItemSelectedListener { item ->
-//            val fragment: Fragment
-//            when (item.itemId) {
-//                R.id.homeFragment -> {
-//                    fragment = HomeFragment()
-//                    loadFragment(fragment)
-//                    true
-//                }
-//                R.id.searchFragment -> {
-//                    fragment = SearchFragment()
-//                    loadFragment(fragment)
-//                    true
-//
-//                }
-//                R.id.shareFragment -> {
-//                    fragment = ShareFragment()
-//                    loadFragment(fragment)
-//                    true
-//
-//                }
-//                R.id.likedFragment -> {
-//                    fragment = LikedFragment()
-//                    loadFragment(fragment)
-//                    true
-//
-//                }
-//                R.id.profileFragment -> {
-//                    fragment = ProfileFragment()
-//                    loadFragment(fragment)
-//                    true
-//
-//                }
-//                else -> false
-//            }
-//
-//        }
-//
-//
-//    }
-//
-//    private fun loadFragment(fragment: Fragment) {
-//        // load fragment
-//        supportFragmentManager.beginTransaction()
-//            .replace(R.id.nav_host_fragment, fragment)
-//            .commit()
-//    }
 
 

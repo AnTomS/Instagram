@@ -1,15 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <androidx.appcompat.widget.AppCompatTextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/top_toolbar"
+        style="@style/Base.Theme.Instagram"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Здесь будет экран с профилем текущего пользователя. его фотографии" />
+        android:layout_height="50dp"
+        android:background="@color/grey"
+        android:elevation="4dp"
+        android:gravity="top"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/forusername"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/username_user"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_heading_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/more"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/action_settings"
+                android:paddingBottom="10dp"
+                android:src="@drawable/baseline_menu_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageButton>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:contentDescription="@string/author_avatar_description"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/edit_profile"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_toolbar"
+        app:srcCompat="@drawable/no_avatar_pic" />
+
+    <TextView
+        android:id="@+id/post_count_text"
+        style="@style/profile_text_count"
+        android:text="50"
+        app:layout_constraintBottom_toTopOf="@+id/edit_profile"
+        app:layout_constraintEnd_toEndOf="@id/post_text"
+        app:layout_constraintStart_toStartOf="@id/post_text"
+        app:layout_constraintTop_toBottomOf="@+id/top_toolbar"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/post_text"
+        style="@style/profile_text"
+        android:text="posts"
+        app:layout_constraintEnd_toStartOf="@id/followers_text"
+        app:layout_constraintStart_toStartOf="@id/edit_profile"
+        app:layout_constraintTop_toBottomOf="@+id/post_count_text" />
+
+    <TextView
+        android:id="@+id/followers_count"
+        style="@style/profile_text_count"
+        android:text="100"
+        app:layout_constraintBaseline_toBaselineOf="@id/post_count_text"
+        app:layout_constraintEnd_toEndOf="@id/followers_text"
+        app:layout_constraintStart_toStartOf="@id/followers_text" />
+
+    <TextView
+        android:id="@+id/following_count"
+        style="@style/profile_text_count"
+        android:text="200"
+        app:layout_constraintBaseline_toBaselineOf="@id/post_count_text"
+        app:layout_constraintEnd_toEndOf="@id/following_text"
+        app:layout_constraintStart_toStartOf="@id/following_text" />
+
+    <TextView
+        android:id="@+id/followers_text"
+        style="@style/profile_text"
+        android:text="followers"
+        app:layout_constraintBaseline_toBaselineOf="@id/post_text"
+        app:layout_constraintEnd_toStartOf="@+id/following_text"
+        app:layout_constraintStart_toEndOf="@+id/post_text" />
+
+    <TextView
+        android:id="@+id/following_text"
+        style="@style/profile_text"
+        android:text="following"
+        app:layout_constraintBaseline_toBaselineOf="@id/post_text"
+        app:layout_constraintEnd_toEndOf="@+id/edit_profile"
+        app:layout_constraintStart_toEndOf="@id/followers_text" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/edit_profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_bg"
+        android:minHeight="0dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:text="@string/edit_profile"
+        android:textSize="@dimen/text_secondary_size"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="5"
+        app:layout_constraintStart_toEndOf="@+id/avatar" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
