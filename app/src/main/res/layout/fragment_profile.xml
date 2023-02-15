@@ -55,12 +55,16 @@
 
     <ImageView
         android:id="@+id/avatar"
-        android:layout_width="@dimen/avatar_big_size"
-        android:layout_height="@dimen/avatar_big_size"
-        android:layout_margin="15dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
         android:contentDescription="@string/author_avatar_description"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/edit_profile"
         app:layout_constraintHorizontal_weight="2"
-        app:layout_constraintStart_toStartOf="@+id/top_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top_toolbar"
         app:srcCompat="@drawable/no_avatar_pic" />
 
@@ -68,57 +72,68 @@
         android:id="@+id/post_count_text"
         style="@style/profile_text_count"
         android:text="50"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="90dp" />
+        app:layout_constraintBottom_toTopOf="@+id/edit_profile"
+        app:layout_constraintEnd_toEndOf="@id/post_text"
+        app:layout_constraintStart_toStartOf="@id/post_text"
+        app:layout_constraintTop_toBottomOf="@+id/top_toolbar"
+        app:layout_constraintVertical_bias="0.3" />
 
     <TextView
         android:id="@+id/post_text"
         style="@style/profile_text"
         android:text="posts"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="128dp" />
+        app:layout_constraintEnd_toStartOf="@id/followers_text"
+        app:layout_constraintStart_toStartOf="@id/edit_profile"
+        app:layout_constraintTop_toBottomOf="@+id/post_count_text" />
 
     <TextView
         android:id="@+id/followers_count"
         style="@style/profile_text_count"
         android:text="100"
-        tools:layout_editor_absoluteX="232dp"
-        tools:layout_editor_absoluteY="90dp" />
+        app:layout_constraintBaseline_toBaselineOf="@id/post_count_text"
+        app:layout_constraintEnd_toEndOf="@id/followers_text"
+        app:layout_constraintStart_toStartOf="@id/followers_text" />
 
     <TextView
         android:id="@+id/following_count"
         style="@style/profile_text_count"
         android:text="200"
-        tools:layout_editor_absoluteX="326dp"
-        tools:layout_editor_absoluteY="90dp" />
+        app:layout_constraintBaseline_toBaselineOf="@id/post_count_text"
+        app:layout_constraintEnd_toEndOf="@id/following_text"
+        app:layout_constraintStart_toStartOf="@id/following_text" />
 
     <TextView
         android:id="@+id/followers_text"
         style="@style/profile_text"
         android:text="followers"
-        tools:layout_editor_absoluteX="232dp"
-        tools:layout_editor_absoluteY="128dp" />
+        app:layout_constraintBaseline_toBaselineOf="@id/post_text"
+        app:layout_constraintEnd_toStartOf="@+id/following_text"
+        app:layout_constraintStart_toEndOf="@+id/post_text" />
 
     <TextView
         android:id="@+id/following_text"
         style="@style/profile_text"
         android:text="following"
-        tools:layout_editor_absoluteX="326dp"
-        tools:layout_editor_absoluteY="128dp" />
+        app:layout_constraintBaseline_toBaselineOf="@id/post_text"
+        app:layout_constraintEnd_toEndOf="@+id/edit_profile"
+        app:layout_constraintStart_toEndOf="@id/followers_text" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/edit_profile"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/button_bg"
+        android:minHeight="0dp"
         android:paddingTop="4dp"
         android:paddingBottom="4dp"
         android:text="@string/edit_profile"
         android:textSize="@dimen/text_secondary_size"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="5"
-        app:layout_constraintStart_toStartOf="@+id/avatar"
-        app:layout_constraintTop_toBottomOf="@+id/avatar" />
+        app:layout_constraintStart_toEndOf="@+id/avatar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

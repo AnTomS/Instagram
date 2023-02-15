@@ -13,5 +13,5 @@
 
     //pic
     <dimen name="avatar_size">48dp</dimen>
-    <dimen name="avatar_big_size">100dp</dimen>
+    <dimen name="avatar_big_size">150dp</dimen>
 </resources>
