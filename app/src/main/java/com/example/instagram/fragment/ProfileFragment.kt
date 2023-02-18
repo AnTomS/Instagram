@@ -6,34 +6,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.appcompat.widget.AppCompatButton
 import androidx.navigation.fragment.findNavController
 import com.example.instagram.R
-import com.example.instagram.databinding.ActivityMainBinding
+import com.example.instagram.databinding.FragmentEditProfileBinding
+import com.example.instagram.databinding.FragmentProfileBinding
+
 
 class ProfileFragment : Fragment() {
 
-    private lateinit var button: Button
 
-    lateinit var binding: ActivityMainBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+        // Inflate the layout for this fragment
 
-        button = view.findViewById(R.id.edit_profile)
+        val binding = FragmentProfileBinding.inflate(inflater, container, false)
 
+        binding.editProfile.setOnClickListener {
+            findNavController().navigate(R.id.editProfileFragment)
+        }
 
-        return view
+        return binding.root
+
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        button.setOnClickListener {
-            findNavController().navigate(R.id.editProfileFragment)
-        }
+
     }
 }
