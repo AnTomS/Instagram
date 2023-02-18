@@ -16,4 +16,7 @@
     <string name="edit_name">Редактировать имя</string>
     <string name="add_website">Добавить ссылку на веб-сайт</string>
     <string name="bio">Добавить информацию о себе</string>
+    <string name="email">Редактировать email адрес</string>
+    <string name="private_info" translatable="false">Private information</string>
+    <string name="phone_number">Редактировать номер телефона</string>
 </resources>

@@ -80,6 +80,7 @@
             app:layout_constraintTop_toBottomOf="@+id/top_toolbar" />
 
         <EditText
+
             android:id="@+id/edit_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -117,9 +118,7 @@
             android:inputType="text"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_username"
-
-            />
+            app:layout_constraintTop_toBottomOf="@+id/edit_username" />
 
         <EditText
             android:id="@+id/bio"
@@ -132,6 +131,49 @@
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/add_website"
+
+            />
+
+        <TextView
+            android:id="@+id/private_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_spacing"
+            android:layout_weight="1"
+            android:hint="@string/private_info"
+            android:orientation="horizontal"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="@dimen/text_heading_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bio" />
+
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_spacing"
+            android:layout_weight="1"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/private_info"
+
+            />
+
+        <EditText
+            android:id="@+id/phone_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_spacing"
+            android:layout_weight="1"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email"
 
             />
 
