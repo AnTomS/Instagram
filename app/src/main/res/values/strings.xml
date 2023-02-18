@@ -12,4 +12,8 @@
     <string name="users_avatar">Фото профиля</string>
     <string name="author_avatar_description">author_avatar_description</string>
     <string name="edit_profile">Редактировать профиль</string>
+    <string name="edit_username">Редактировать имя пользователя</string>
+    <string name="edit_name">Редактировать имя</string>
+    <string name="add_website">Добавить ссылку на веб-сайт</string>
+    <string name="bio">Добавить информацию о себе</string>
 </resources>
