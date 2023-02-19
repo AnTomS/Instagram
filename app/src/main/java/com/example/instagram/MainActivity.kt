@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-            //получаем доступ к BottomNavigationView
+        //получаем доступ к BottomNavigationView
         val navView: BottomNavigationView = findViewById(R.id.bottomNav)
 
         //получаем доступ к фрагменту, в который будем вставлять другие фрагменты, через supportFragmentManager
