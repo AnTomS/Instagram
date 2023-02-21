@@ -28,4 +28,8 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="input_email">Введите email</string>
+    <string name="log_in">Войти</string>
+    <string name="input_password">Введите пароль</string>
+    <string name="don_t_have_an_account_register"> Еще нет аккаунта? Зарегестрируйтесь</string>
 </resources>

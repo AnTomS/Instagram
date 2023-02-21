@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,10 +9,63 @@
     <ImageView
         android:id="@+id/instagram_image"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="@dimen/spacing"
+        android:layout_marginTop="@dimen/spacing"
+        android:layout_marginEnd="@dimen/spacing"
+        android:background="@android:color/transparent"
         android:src="@drawable/logo"
-        android:background="@color/white"
-        android:layout_marginTop="@dimen/margin_spacing"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/email_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_spacing"
+        android:layout_marginTop="@dimen/margin_spacing"
+        android:layout_marginEnd="@dimen/margin_spacing"
+        android:background="@drawable/login_input"
+        android:hint="@string/input_email"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/margin_spacing"
+        app:layout_constraintTop_toBottomOf="@id/instagram_image" />
+
+    <EditText
+        android:id="@+id/password_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_spacing"
+        android:layout_marginTop="@dimen/margin_spacing"
+        android:layout_marginEnd="@dimen/margin_spacing"
+        android:background="@drawable/login_input"
+        android:hint="@string/input_password"
+        android:inputType="textPassword"
+        android:padding="@dimen/margin_spacing"
+        app:layout_constraintTop_toBottomOf="@id/email_input" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_spacing"
+        android:layout_marginTop="@dimen/margin_spacing"
+        android:layout_marginEnd="@dimen/margin_spacing"
+        android:background="@drawable/login_btn_bg"
+        android:text="@string/log_in"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_heading_size"
+        app:layout_constraintTop_toBottomOf="@id/password_input" />
+
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tlb_size"
+        android:background="@drawable/button_bg"
+        android:gravity="center"
+        android:text="@string/don_t_have_an_account_register"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

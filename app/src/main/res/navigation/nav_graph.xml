@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/profileFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -27,25 +27,28 @@
         android:id="@+id/searchFragment"
         android:name="com.example.instagram.fragment.SearchFragment"
         android:label="search_fragment"
-        tools:layout="@layout/fragment_search" >
+        tools:layout="@layout/fragment_search">
+
     </fragment>
     <fragment
         android:id="@+id/shareFragment"
         android:name="com.example.instagram.fragment.ShareFragment"
         android:label="share_fragment"
-        tools:layout="@layout/fragment_share" >
+        tools:layout="@layout/fragment_share">
+
     </fragment>
     <fragment
         android:id="@+id/likedFragment"
         android:name="com.example.instagram.fragment.LikedFragment"
         android:label="liked_fragment"
-        tools:layout="@layout/fragment_liked" >
+        tools:layout="@layout/fragment_liked">
+
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.instagram.fragment.ProfileFragment"
         android:label="profile_fragment"
-        tools:layout="@layout/fragment_profile" >
+        tools:layout="@layout/fragment_profile">
 
         <action
             android:id="@+id/action_profileFragment_to_edit_profileFragment"
@@ -56,4 +59,9 @@
         android:name="com.example.instagram.fragment.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.instagram.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 </navigation>
