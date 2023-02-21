@@ -25,11 +25,6 @@ class HomeFragment : Fragment() {
         val binding = inflater.inflate(R.layout.fragment_home, container, false)
 
 
-
-//        val currentUser = auth.currentUser
-//        if (currentUser != null) {
-//            //TODO Reload
-//        }
         val auth = FirebaseAuth.getInstance()
         auth.signInWithEmailAndPassword("thekeibee@gmail.com", "password")
             .addOnCompleteListener {task ->

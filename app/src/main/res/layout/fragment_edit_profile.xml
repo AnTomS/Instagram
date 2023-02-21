@@ -137,9 +137,8 @@
         <TextView
             android:id="@+id/private_info"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginTop="@dimen/margin_spacing"
-            android:layout_weight="1"
             android:hint="@string/private_info"
             android:orientation="horizontal"
             android:textColor="@color/design_default_color_on_secondary"
