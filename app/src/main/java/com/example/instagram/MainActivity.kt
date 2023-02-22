@@ -1,6 +1,7 @@
 package com.example.instagram
 
 import android.os.Bundle
+import android.view.View
 
 
 import androidx.appcompat.app.AppCompatActivity
@@ -29,16 +30,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //получаем доступ к BottomNavigationView
-        val navView: BottomNavigationView = findViewById(R.id.bottomNav)
+        val bottomNavigation = binding.bottomNav
 
         //получаем доступ к фрагменту, в который будем вставлять другие фрагменты, через supportFragmentManager
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
 
+        // ограничиваем видимость BottomNavigationView, чтобы было активно только на главные фрагменты
+        val navController = navHostFragment.navController
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.homeFragment, R.id.likedFragment, R.id.profileFragment, R.id.searchFragment, R.id.shareFragment -> bottomNavigation.visibility =
+                    View.VISIBLE
+                else -> bottomNavigation.visibility = View.GONE
+            }
+        }
         //получаем доступ к Навконтроллеру. Навконтроллер, в свою очередь, связан с Навигацией
-        val navController: NavController = navHostFragment.navController
+        bottomNavigation.setupWithNavController(navController)
 
-        navView.setupWithNavController(navController)
     }
 }
 
