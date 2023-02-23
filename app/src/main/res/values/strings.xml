@@ -31,5 +31,5 @@
     <string name="input_email">Введите email</string>
     <string name="log_in">Войти</string>
     <string name="input_password">Введите пароль</string>
-    <string name="don_t_have_an_account_register"> Еще нет аккаунта? Зарегестрируйтесь</string>
+    <string name="don_t_have_an_account_register"> Еще нет аккаунта? <b>Зарегестрируйтесь </b></string>
 </resources>
