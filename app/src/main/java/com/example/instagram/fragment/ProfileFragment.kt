@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import androidx.navigation.fragment.findNavController
 import com.example.instagram.R
 import com.example.instagram.databinding.FragmentEditProfileBinding
@@ -13,6 +14,8 @@ import com.example.instagram.databinding.FragmentProfileBinding
 
 
 class ProfileFragment : Fragment() {
+
+
 
 
     override fun onCreateView(
@@ -27,6 +30,12 @@ class ProfileFragment : Fragment() {
         binding.editProfile.setOnClickListener {
             findNavController().navigate(R.id.editProfileFragment)
         }
+
+
+
+
+
+
 
         return binding.root
 

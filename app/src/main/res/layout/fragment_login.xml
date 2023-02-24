@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".fragment.LoginFragment">
 
         <ImageView
@@ -58,9 +58,9 @@
             android:layout_marginTop="@dimen/margin_spacing"
             android:layout_marginEnd="@dimen/margin_spacing"
             android:background="@drawable/login_btn_bg"
+            android:enabled="true"
             android:text="@string/log_in"
             android:textAllCaps="false"
-            android:textColor="@color/white"
             android:textSize="@dimen/text_heading_size"
             app:layout_constraintTop_toBottomOf="@id/password_input" />
 
