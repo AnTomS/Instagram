@@ -32,4 +32,9 @@
     <string name="log_in">Войти</string>
     <string name="input_password">Введите пароль</string>
     <string name="don_t_have_an_account_register"> Еще нет аккаунта? <b>Зарегистрируйтесь </b></string>
+    <string name="register_new_account">Регистрация нового аккаунта</string>
+    <string name="full_name_input">Введите Ваше имя</string>
+    <string name="new_email_input">Введите Ваш email</string>
+    <string name="add_password">Пароль</string>
+    <string name="register">Регистрация</string>
 </resources>

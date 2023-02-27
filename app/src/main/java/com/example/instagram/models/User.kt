@@ -5,4 +5,6 @@ data class User(
     val username: String = "",
     val website: String = "",
     val bio: String = "",
+    val phone: Long = 0L,
+    val email: String = "",
 )

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.RegisterFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/top_toolbar"
+        style="@style/Base.Theme.Instagram"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/grey"
+        android:elevation="4dp"
+        android:gravity="top"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/register_new_account"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_heading_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/person_image"
+        android:layout_width="@dimen/avatar_big_size"
+        android:layout_height="@dimen/avatar_big_size"
+        android:layout_marginTop="@dimen/margin_spacing"
+        android:src="@drawable/person"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_toolbar" />
+
+    <EditText
+        android:id="@+id/new_full_name_input"
+        style="@style/login_input"
+        android:hint="@string/full_name_input"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/person_image"
+
+        />
+
+    <EditText
+        android:id="@+id/new_email_input"
+        style="@style/login_input"
+        android:layout_weight="1"
+        android:hint="@string/new_email_input"
+        android:inputType="textEmailAddress"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_full_name_input"
+
+        />
+
+    <EditText
+        android:id="@+id/add_password"
+        style="@style/login_input"
+        android:hint="@string/add_password"
+        android:inputType="textPassword"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_email_input" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/register_btn"
+        style="@style/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_spacing"
+        android:layout_marginTop="@dimen/spacing"
+        android:layout_marginEnd="@dimen/margin_spacing"
+        android:background="@drawable/login_btn_bg"
+        android:enabled="true"
+        android:text="@string/register"
+
+        android:textSize="@dimen/text_heading_size"
+        app:layout_constraintTop_toBottomOf="@id/add_password" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

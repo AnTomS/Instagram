@@ -80,11 +80,8 @@
             app:layout_constraintTop_toBottomOf="@+id/top_toolbar" />
 
         <EditText
-
             android:id="@+id/edit_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_spacing"
+            style="@style/login_input"
             android:layout_weight="1"
             android:hint="@string/edit_name"
             android:inputType="text"
@@ -96,9 +93,7 @@
 
         <EditText
             android:id="@+id/edit_username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_spacing"
+            style="@style/login_input"
             android:layout_weight="1"
             android:hint="@string/edit_username"
             android:inputType="text"
@@ -110,9 +105,7 @@
 
         <EditText
             android:id="@+id/add_website"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_spacing"
+            style="@style/login_input"
             android:layout_weight="1"
             android:hint="@string/add_website"
             android:inputType="text"
@@ -122,9 +115,7 @@
 
         <EditText
             android:id="@+id/bio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_spacing"
+            style="@style/login_input"
             android:layout_weight="1"
             android:hint="@string/bio"
             android:inputType="text"
@@ -136,9 +127,7 @@
 
         <TextView
             android:id="@+id/private_info"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/margin_spacing"
+            style="@style/login_input"
             android:hint="@string/private_info"
             android:orientation="horizontal"
             android:textColor="@color/design_default_color_on_secondary"
@@ -149,10 +138,8 @@
 
 
         <EditText
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_spacing"
+            android:id="@+id/edit_email"
+            style="@style/login_input"
             android:layout_weight="1"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
@@ -163,16 +150,14 @@
             />
 
         <EditText
-            android:id="@+id/phone_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_spacing"
+            android:id="@+id/edit_phone_number"
+            style="@style/login_input"
             android:layout_weight="1"
             android:hint="@string/phone_number"
             android:inputType="phone"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email"
+            app:layout_constraintTop_toBottomOf="@+id/edit_email"
 
             />
 
