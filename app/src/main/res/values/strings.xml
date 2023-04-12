@@ -37,4 +37,6 @@
     <string name="new_email_input">Введите Ваш email</string>
     <string name="add_password">Пароль</string>
     <string name="register">Регистрация</string>
+    <string name="next_btn">Далее</string>
+    <string name="enter_full_name_and_password">Введите Ваше имя и пароль</string>
 </resources>

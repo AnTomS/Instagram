@@ -71,5 +71,5 @@
         android:id="@+id/registerFragment"
         android:name="com.example.instagram.fragment.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register_mail" />
 </navigation>
