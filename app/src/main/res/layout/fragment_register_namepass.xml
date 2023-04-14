@@ -48,17 +48,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top_toolbar" />
 
-    <EditText
-        android:id="@+id/new_email_input"
-        style="@style/login_input"
-        android:layout_weight="1"
-        android:hint="@string/new_email_input"
-        android:inputType="textEmailAddress"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_full_name_input"
-
-        />
 
     <EditText
         android:id="@+id/add_password"
@@ -67,7 +56,7 @@
         android:inputType="textPassword"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_email_input" />
+        app:layout_constraintTop_toBottomOf="@+id/new_full_name_input" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/register_btn"

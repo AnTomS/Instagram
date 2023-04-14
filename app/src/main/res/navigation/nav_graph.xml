@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/registerFragment">
+    app:startDestination="@id/registerFragmentMail">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -63,13 +63,27 @@
         android:name="com.example.instagram.fragment.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
-    <action
-        android:id="@+id/action_loginFragment_to_home_profileFragment"
-        app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_home_profileFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/registerFragment"
-        android:name="com.example.instagram.fragment.RegisterFragment"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register_mail" />
+        android:id="@+id/registerFragmentMail"
+        android:name="com.example.instagram.fragment.RegisterFragmentMail"
+        android:label="RegisterFragmentMail">
+        <argument android:name="MyArg">
+
+        </argument>
+        <action
+            android:id="@+id/action_registerFragmentMail_to_registerFragmentNamePass"
+            app:destination="@id/registerFragmentNamePass" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragmentNamePass"
+        android:name="com.example.instagram.fragment.RegisterFragmentNamePass"
+        android:label="RegisterFragmentNamePass">
+        <argument android:name="MyArg">
+
+        </argument>
+    </fragment>
 </navigation>
