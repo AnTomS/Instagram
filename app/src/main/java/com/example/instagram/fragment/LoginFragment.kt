@@ -42,6 +42,11 @@ class LoginFragment : Fragment(), TextWatcher, View.OnClickListener {
         login_btn.isEnabled = false
         login_btn.setOnClickListener(this)
         mAuth=FirebaseAuth.getInstance()
+
+
+        binding.info.setOnClickListener{
+            findNavController().navigate(R.id.registerFragmentMail)
+        }
         return binding.root
 
     }
@@ -75,5 +80,6 @@ class LoginFragment : Fragment(), TextWatcher, View.OnClickListener {
 
     private fun validate(email: String, password: String) =
         email.isNotEmpty() && password.isNotEmpty()
+
 }
 
