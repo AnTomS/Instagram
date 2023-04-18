@@ -30,15 +30,13 @@ class RegisterFragmentNamePass : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         val binding = FragmentRegisterNamepassBinding.inflate(inflater, container, false)
         binding.registerBtn.setOnClickListener {
-           val fullName = binding.newFullNameInput.text.toString()
-           val password = binding.addPassword.text.toString()
-            val email=args.email
-
-                onRegister(fullName, password, email)
-
+            val fullName = binding.newFullNameInput.text.toString()
+            val password = binding.addPassword.text.toString()
+            val email = args.email
+            onRegister(fullName, password, email)
 
 
         }
@@ -58,17 +56,17 @@ class RegisterFragmentNamePass : Fragment() {
                             val user = makeUser(fullName, email)
                             _DataBase.child("users").child(it.result.user!!.uid).setValue(user)
                                 .addOnCompleteListener {
-                            if (it.isSuccessful) {
-                                findNavController().navigate(R.id.action_registerFragmentMail_to_homeFragment)
-                            } else {
-                                Log.e("Tag", "failed to create user profile", it.exception)
-                                Toast.makeText(
-                                    requireActivity(),
-                                    "Something went wrong. Try again later",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }
-                        }
+                                    if (it.isSuccessful) {
+                                        findNavController().navigate(R.id.action_registerFragmentMail_to_homeFragment)
+                                    } else {
+                                        Log.e("Tag", "failed to create user profile", it.exception)
+                                        Toast.makeText(
+                                            requireActivity(),
+                                            "Something went wrong. Try again later",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+                                }
                         } else {
                             Log.e("Tag", "onRegister: Email is null")
                             Toast.makeText(
