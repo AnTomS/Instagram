@@ -81,8 +81,9 @@
         android:name="com.example.instagram.fragment.RegisterFragmentNamePass"
         android:label="RegisterFragmentNamePass">
         <argument
-            android:name="Email"
-            app:nullable="true"
-            android:defaultValue="@null"/>
+            android:name="Email" />
+        <action
+            android:id="@+id/action_registerFragmentMail_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

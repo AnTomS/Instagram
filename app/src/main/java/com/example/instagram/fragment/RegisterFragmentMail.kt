@@ -29,13 +29,19 @@ class RegisterFragmentMail : Fragment() {
         binding.nextBtn.setOnClickListener {
             val email = binding.newEmailInput.text.toString()
             if (email.isNotEmpty()) {
-                findNavController().navigate(R.id.action_registerFragmentMail_to_registerFragmentNamePass)
+                val action =
+                    RegisterFragmentMailDirections.actionRegisterFragmentMailToRegisterFragmentNamePass(
+                        email
+                    )
+                findNavController().navigate(action)
             } else {
-                Toast.makeText(requireActivity(), "Введите Ваш адрес электронной почты", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "Введите Ваш адрес электронной почты",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
-            }
-
-
+        }
 
         return binding.root
     }

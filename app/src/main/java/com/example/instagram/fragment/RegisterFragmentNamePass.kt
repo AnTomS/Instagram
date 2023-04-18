@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.instagram.R
-import com.example.instagram.databinding.FragmentRegisterMailBinding
 import com.example.instagram.databinding.FragmentRegisterNamepassBinding
 import com.example.instagram.models.User
 import com.google.firebase.auth.FirebaseAuth
@@ -34,17 +33,21 @@ class RegisterFragmentNamePass : Fragment() {
     ): View? {
         val binding = FragmentRegisterNamepassBinding.inflate(inflater, container, false)
         binding.registerBtn.setOnClickListener {
-            val email = args.myArg
-            val fullName = binding.newFullNameInput.text.toString()
-            val password = binding.addPassword.text.toString()
-            onRegister(fullName, password, email)
+           val fullName = binding.newFullNameInput.text.toString()
+           val password = binding.addPassword.text.toString()
+            val email=args.email
+
+                onRegister(fullName, password, email)
+
+
+
         }
 
         return binding.root
     }
 
 
-    private fun onRegister(fullName: String, password: String, email: String) {
+    private fun onRegister(fullName: String, password: String, email: String?) {
         firebaseAuth = FirebaseAuth.getInstance()
         _DataBase = FirebaseDatabase.getInstance().getReference("users")
         if (fullName.isNotEmpty() && password.isNotEmpty()) {
@@ -54,8 +57,9 @@ class RegisterFragmentNamePass : Fragment() {
                         if (it.isSuccessful) {
                             val user = makeUser(fullName, email)
                             _DataBase.child("users").child(it.result.user!!.uid).setValue(user)
+                                .addOnCompleteListener {
                             if (it.isSuccessful) {
-                                findNavController().navigate(R.id.homeFragment)
+                                findNavController().navigate(R.id.action_registerFragmentMail_to_homeFragment)
                             } else {
                                 Log.e("Tag", "failed to create user profile", it.exception)
                                 Toast.makeText(
@@ -64,6 +68,7 @@ class RegisterFragmentNamePass : Fragment() {
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
+                        }
                         } else {
                             Log.e("Tag", "onRegister: Email is null")
                             Toast.makeText(
@@ -72,7 +77,6 @@ class RegisterFragmentNamePass : Fragment() {
                                 Toast.LENGTH_SHORT
                             ).show()
                             findNavController().popBackStack()
-
                         }
                     }
             } else {
