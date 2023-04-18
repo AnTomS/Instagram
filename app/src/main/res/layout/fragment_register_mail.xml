@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:fillViewport="true">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/top_toolbar"
@@ -45,16 +45,20 @@
         android:layout_width="@dimen/avatar_big_size"
         android:layout_height="@dimen/avatar_big_size"
         android:layout_marginTop="@dimen/margin_spacing"
+        android:contentDescription="@string/avatar_for_user"
         android:src="@drawable/person"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_toolbar"
-        android:contentDescription="@string/avatar_for_user" />
+        app:layout_constraintTop_toBottomOf="@+id/top_toolbar" />
 
 
     <EditText
         android:id="@+id/new_email_input"
         style="@style/login_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_spacing"
+        android:layout_marginRight="@dimen/margin_spacing"
         android:layout_weight="1"
         android:hint="@string/new_email_input"
         android:inputType="textEmailAddress"
@@ -67,17 +71,19 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/next_btn"
         style="@style/login_btn"
-        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_spacing"
+        android:layout_marginLeft="@dimen/margin_spacing"
         android:layout_marginTop="@dimen/spacing"
         android:layout_marginEnd="@dimen/margin_spacing"
+        android:layout_marginRight="@dimen/margin_spacing"
         android:background="@drawable/login_btn_bg"
         android:enabled="true"
         android:text="@string/next_btn"
-
         android:textSize="@dimen/text_heading_size"
+
+        android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@id/new_email_input" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

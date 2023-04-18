@@ -11,9 +11,12 @@ import androidx.navigation.fragment.navArgs
 import com.example.instagram.R
 import com.example.instagram.databinding.FragmentRegisterMailBinding
 import com.example.instagram.databinding.FragmentRegisterNamepassBinding
+import com.google.firebase.auth.FirebaseAuth
 
 
 class RegisterFragmentMail : Fragment() {
+
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,14 +29,35 @@ class RegisterFragmentMail : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding = FragmentRegisterMailBinding.inflate(inflater, container, false)
+        firebaseAuth = FirebaseAuth.getInstance()
+
         binding.nextBtn.setOnClickListener {
             val email = binding.newEmailInput.text.toString()
             if (email.isNotEmpty()) {
-                val action =
-                    RegisterFragmentMailDirections.actionRegisterFragmentMailToRegisterFragmentNamePass(
-                        email
-                    )
-                findNavController().navigate(action)
+                firebaseAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        if (it.result.signInMethods!!.isEmpty() != false) {
+                            val action =
+                                RegisterFragmentMailDirections.actionRegisterFragmentMailToRegisterFragmentNamePass(
+                                    email
+                                )
+                            findNavController().navigate(action)
+                        } else {
+                            Toast.makeText(
+                                requireContext(),
+                                "Пользователь с таким email уже существует",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    } else {
+                        Toast.makeText(
+                            requireContext(), "it.exception",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+
+                }
+
             } else {
                 Toast.makeText(
                     requireContext(),
