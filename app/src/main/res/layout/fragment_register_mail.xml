@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/top_toolbar"
@@ -50,13 +46,12 @@
             android:id="@+id/person_image"
             android:layout_width="@dimen/avatar_big_size"
             android:layout_height="@dimen/avatar_big_size"
-            android:layout_margin="@dimen/margin_spacing"
-            android:contentDescription="@string/avatar_for_user"
-
+            android:layout_marginTop="@dimen/margin_spacing"
             android:src="@drawable/person"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/top_toolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/top_toolbar"
+            android:contentDescription="@string/avatar_for_user"  />
 
         <EditText
             android:id="@+id/new_email_input"
@@ -92,7 +87,6 @@
 
             android:visibility="visible"
             app:layout_constraintTop_toBottomOf="@id/new_email_input" />
-    </LinearLayout>
 
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

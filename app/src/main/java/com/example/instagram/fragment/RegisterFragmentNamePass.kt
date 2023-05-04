@@ -5,6 +5,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -22,6 +24,9 @@ class RegisterFragmentNamePass : Fragment() {
     private val args by navArgs<RegisterFragmentNamePassArgs>()
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var _DataBase: DatabaseReference
+    private lateinit var register_Btn: Button
+    private lateinit var fullNameInput: EditText
+    private lateinit var passwordInput: EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -32,7 +37,14 @@ class RegisterFragmentNamePass : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         val binding = FragmentRegisterNamepassBinding.inflate(inflater, container, false)
+
+        register_Btn = binding.registerBtn
+        fullNameInput = binding.newFullNameInput
+        passwordInput = binding.addPassword
+        coordinateBtnWithInputs(register_Btn, fullNameInput, passwordInput)
+
         binding.registerBtn.setOnClickListener {
+
             val fullName = binding.newFullNameInput.text.toString()
             val password = binding.addPassword.text.toString()
             val email = args.email

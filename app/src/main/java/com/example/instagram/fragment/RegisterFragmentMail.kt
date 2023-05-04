@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -14,6 +16,8 @@ import com.google.firebase.auth.FirebaseAuth
 class RegisterFragmentMail : Fragment() {
 
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var next_Btn: Button
+    private lateinit var emailInput: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +31,11 @@ class RegisterFragmentMail : Fragment() {
         // Inflate the layout for this fragment
         val binding = FragmentRegisterMailBinding.inflate(inflater, container, false)
         firebaseAuth = FirebaseAuth.getInstance()
+
+
+        next_Btn = binding.nextBtn
+        emailInput = binding.newEmailInput
+        coordinateBtnWithInputs(next_Btn, emailInput)
 
         binding.nextBtn.setOnClickListener {
             val email = binding.newEmailInput.text.toString()

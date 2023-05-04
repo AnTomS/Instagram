@@ -1,8 +1,6 @@
 package com.example.instagram.fragment
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +14,7 @@ import com.example.instagram.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
 
-class LoginFragment : Fragment(), TextWatcher, View.OnClickListener {
+class LoginFragment : Fragment(), View.OnClickListener {
 
     private lateinit var login_btn: Button
     private lateinit var mAuth: FirebaseAuth
@@ -37,14 +35,12 @@ class LoginFragment : Fragment(), TextWatcher, View.OnClickListener {
         emailInput = binding.emailInput
         passwordInput = binding.passwordInput
 
-        binding.emailInput.addTextChangedListener(this)
-        binding.passwordInput.addTextChangedListener(this)
-        login_btn.isEnabled = false
+        coordinateBtnWithInputs(login_btn, emailInput, passwordInput)
         login_btn.setOnClickListener(this)
-        mAuth=FirebaseAuth.getInstance()
+        mAuth = FirebaseAuth.getInstance()
 
 
-        binding.info.setOnClickListener{
+        binding.info.setOnClickListener {
             findNavController().navigate(R.id.registerFragmentMail)
         }
         return binding.root
@@ -64,17 +60,6 @@ class LoginFragment : Fragment(), TextWatcher, View.OnClickListener {
             Toast.makeText(requireActivity(), "Please enter email and password", Toast.LENGTH_SHORT)
                 .show()
         }
-    }
-
-    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-    }
-
-    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-    }
-
-    override fun afterTextChanged(s: Editable?) {
-        login_btn.isEnabled =
-            validate(emailInput.text.toString(), passwordInput.text.toString())
     }
 
 
