@@ -7,10 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
-import com.example.instagram.R
 import com.example.instagram.databinding.FragmentRegisterMailBinding
-import com.example.instagram.databinding.FragmentRegisterNamepassBinding
 import com.google.firebase.auth.FirebaseAuth
 
 

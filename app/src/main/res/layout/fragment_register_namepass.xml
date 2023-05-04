@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/top_toolbar"
         style="@style/Base.Theme.Instagram"
@@ -40,7 +45,6 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-
     <EditText
         android:id="@+id/new_full_name_input"
         style="@style/login_input"
@@ -51,7 +55,8 @@
         android:hint="@string/full_name_input"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/top_toolbar"
+        android:autofillHints="add_new_full_name" />
 
 
     <EditText
@@ -59,13 +64,17 @@
         style="@style/login_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_spacing"
         android:layout_marginLeft="@dimen/margin_spacing"
+        android:layout_marginTop="@dimen/spacing"
+        android:layout_marginEnd="@dimen/margin_spacing"
         android:layout_marginRight="@dimen/margin_spacing"
         android:hint="@string/add_password"
         android:inputType="textPassword"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_full_name_input" />
+        app:layout_constraintTop_toBottomOf="@+id/new_full_name_input"
+        android:autofillHints="add_password" />
 
     <androidx.appcompat.widget.AppCompatButton
 
@@ -84,4 +93,5 @@
         android:textSize="@dimen/text_heading_size"
         app:layout_constraintTop_toBottomOf="@id/add_password" />
 
+    </LinearLayout>
 </ScrollView>

@@ -6,84 +6,93 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/top_toolbar"
-        style="@style/Base.Theme.Instagram"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/grey"
-        android:elevation="4dp"
-        android:gravity="top"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/top_toolbar"
+            style="@style/Base.Theme.Instagram"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="50dp"
+            android:background="@color/grey"
+            android:elevation="4dp"
+            android:gravity="top"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/edit_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/register_new_account"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_heading_size"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.appcompat.widget.Toolbar>
-
-    <ImageView
-        android:id="@+id/person_image"
-        android:layout_width="@dimen/avatar_big_size"
-        android:layout_height="@dimen/avatar_big_size"
-        android:layout_marginTop="@dimen/margin_spacing"
-        android:contentDescription="@string/avatar_for_user"
-        android:src="@drawable/person"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_toolbar" />
+                <TextView
+                    android:id="@+id/edit_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/register_new_account"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_heading_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
-    <EditText
-        android:id="@+id/new_email_input"
-        style="@style/login_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_spacing"
-        android:layout_marginRight="@dimen/margin_spacing"
-        android:layout_weight="1"
-        android:hint="@string/new_email_input"
-        android:inputType="textEmailAddress"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/person_image"
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        />
+        </androidx.appcompat.widget.Toolbar>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/next_btn"
-        style="@style/login_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_spacing"
-        android:layout_marginLeft="@dimen/margin_spacing"
-        android:layout_marginTop="@dimen/spacing"
-        android:layout_marginEnd="@dimen/margin_spacing"
-        android:layout_marginRight="@dimen/margin_spacing"
-        android:background="@drawable/login_btn_bg"
-        android:enabled="true"
-        android:text="@string/next_btn"
-        android:textSize="@dimen/text_heading_size"
 
-        android:visibility="visible"
-        app:layout_constraintTop_toBottomOf="@id/new_email_input" />
+        <ImageView
+            android:id="@+id/person_image"
+            android:layout_width="@dimen/avatar_big_size"
+            android:layout_height="@dimen/avatar_big_size"
+            android:layout_margin="@dimen/margin_spacing"
+            android:contentDescription="@string/avatar_for_user"
+
+            android:src="@drawable/person"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_toolbar" />
+
+        <EditText
+            android:id="@+id/new_email_input"
+            style="@style/login_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_spacing"
+            android:layout_marginLeft="@dimen/margin_spacing"
+            android:layout_marginTop="@dimen/spacing"
+            android:layout_marginEnd="@dimen/margin_spacing"
+            android:layout_marginRight="@dimen/margin_spacing"
+            android:hint="@string/new_email_input"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/person_image"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/next_btn"
+            style="@style/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_spacing"
+            android:layout_marginLeft="@dimen/margin_spacing"
+            android:layout_marginTop="@dimen/spacing"
+            android:layout_marginEnd="@dimen/margin_spacing"
+            android:layout_marginRight="@dimen/margin_spacing"
+            android:background="@drawable/login_btn_bg"
+            android:enabled="true"
+            android:text="@string/next_btn"
+            android:textSize="@dimen/text_heading_size"
+
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/new_email_input" />
+    </LinearLayout>
+
 
 </ScrollView>
